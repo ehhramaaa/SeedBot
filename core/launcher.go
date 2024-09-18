@@ -191,7 +191,7 @@ func ProcessBot(config *config.Config) {
 		isUseProxy := (choice == 2)
 		proxy := ""
 		if isUseProxy {
-			proxy = proxyList[index]
+			proxy = proxyList[index%len(proxyList)]
 		}
 
 		isBindWallet := (choice == 3)
