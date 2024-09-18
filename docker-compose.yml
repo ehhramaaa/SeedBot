@@ -1,0 +1,11 @@
+version: '3'
+services:
+  bot:
+    container_name: 'SeedBot'
+    image: seedbot
+    stop_signal: SIGINT
+    restart: on-failure
+    deploy:
+      resources:
+        limits:
+          cpus: "3"

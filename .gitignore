@@ -1,0 +1,7 @@
+# Mengabaikan file log
+query.txt
+proxy.txt
+wallet_address.txt
+
+# Mengabaikan folder build
+raw/
