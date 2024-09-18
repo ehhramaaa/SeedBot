@@ -6,8 +6,7 @@
 
 # 🔥🔥 Support Cross Platform 🔥🔥
 
-
-- #### Why Golang? Cause Less Modules Error, Just Run 1 Command And It's Automatic Download Modules And Run Program 
+- #### Why Golang? Cause Less Modules Error, Just Run 1 Command And It's Automatic Download Modules And Run Program
 
 - #### If Your Device Is Android, You Can Use Termux For Run This Bot
 
