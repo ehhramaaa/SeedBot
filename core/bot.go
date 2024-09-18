@@ -21,7 +21,7 @@ func launchBot(account *Account, config *config.Config, walletAddress string, pr
 	isAutoUpgradeStorage := config.Bool("AUTO_UPGRADE.STORAGE")
 	isAutoUpgradeHolyWater := config.Bool("AUTO_UPGRADE.HOLY_WATER")
 
-	claimFarmingSeedAfter := config.Int("CLAIM_FARMING_SEED_AFTER")
+	claimFarmingSeedAfter := helper.RandomNumber(config.Int("CLAIM_FARMING_SEED_AFTER.MIN"), config.Int("CLAIM_FARMING_SEED_AFTER.MAX"))
 
 	client := &Client{
 		username:   account.Username,
