@@ -419,6 +419,10 @@ func launchBot(account *Account, config *config.Config, walletAddress string, pr
 				}
 
 				if speedSeedLevel < maxLevel {
+					if speedSeedLevel < 1 {
+						speedSeedLevel = speedSeedLevel + 1
+					}
+
 					if currentBalance > (float64(speedSeedCosts[(speedSeedLevel-1)].(float64)) / 1e9) {
 						upgradeSpeed := client.upgradeSpeedSeed()
 						if upgradeSpeed == "{}" {
@@ -439,6 +443,9 @@ func launchBot(account *Account, config *config.Config, walletAddress string, pr
 				}
 
 				if storageSeedLevel < maxLevel {
+					if storageSeedLevel < 1 {
+						storageSeedLevel = storageSeedLevel + 1
+					}
 					if currentBalance > (float64(storageSeedCosts[(storageSeedLevel-1)].(float64)) / 1e9) {
 						upgradeStorage := client.upgradeStorageSeed()
 						if upgradeStorage == "{}" {
