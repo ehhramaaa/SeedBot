@@ -77,9 +77,11 @@ func (c *Client) setProxy() error {
 func (c *Client) makeRequest(method string, url string, jsonBody interface{}) ([]byte, error) {
 	var err error
 	// Set proxy if available
-	err = c.setProxy()
-	if err != nil {
-		return nil, err
+	if c.proxy != "" {
+		err = c.setProxy()
+		if err != nil {
+			return nil, err
+		}
 	}
 
 	// Convert body to JSON

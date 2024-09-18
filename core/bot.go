@@ -73,8 +73,10 @@ func launchBot(account *Account, config *config.Config, walletAddress string, pr
 			}
 		}
 
-		if len(data["wallet_address_ton"].(string)) > 0 {
+		if walletConnected, exits := data["wallet_connected"].(string); exits && len(walletConnected) > 0 {
 			isWalletConnected = true
+		} else {
+			isWalletConnected = false
 		}
 
 		helper.PrettyLog("success", fmt.Sprintf("| %s | Claimed First Egg: %v | Speed Seed Level: %v | Storage Seed Level: %v | Holy Water Level: %v | Wallet Connected: %v", client.username, data["give_first_egg"].(bool), speedSeedLevel, storageSeedLevel, holyWaterLevel, isWalletConnected))
